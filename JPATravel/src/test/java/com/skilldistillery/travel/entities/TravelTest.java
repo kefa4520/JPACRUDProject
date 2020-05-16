@@ -49,6 +49,7 @@ class TravelTest {
 	void test() {
 		assertNotNull(travel);
 		assertEquals("Colombia", travel.getTripName());
+		
 	}
 
 }

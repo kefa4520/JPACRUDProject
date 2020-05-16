@@ -8,5 +8,6 @@
 </head>
 <body>
 <h1>Travel: ${travel.tripName}</h1>
+<h3>Details: ${travel.cheapCrashPad}</h3>
 </body>
 </html>
