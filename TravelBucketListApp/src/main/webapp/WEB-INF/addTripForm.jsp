@@ -13,6 +13,7 @@
 <link rel="stylesheet" type="text/css" href="styles.css">
 
 <title>Trip</title>
+<a href="/" button type="button" class="btn btn-outline-primary">Home</a><br><br>
 </head>
 <body>
 <div class="container-fluid">
@@ -47,7 +48,7 @@
     Luxury stay link:
     <input type="text" name="luxuryStay"/><br><br> 
     
-    <input type="submit" value="Add Film Data"/><br><br>
+    <input type="submit" value="Add Trip Data"/><br><br>
   </form>
   
   

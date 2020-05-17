@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Trip Details</title>
+<a href="/" button type="button" class="btn btn-outline-primary">Home</a><br><br>
 </head>
 <body>
 	<h1>Escape to: ${travel.tripName}</h1>

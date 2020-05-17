@@ -17,18 +17,19 @@ public class TravelDAOImpl implements TravelDAO {
 	@PersistenceContext
 	private EntityManager em;
 	
-	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("TravelPU");
+	//private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("TravelPU");
 	
-	
+
+	@Override
 	public Travel addTravel(Travel trip) {
-		em = emf.createEntityManager();
+		//em = emf.createEntityManager();
 		
-		em.getTransaction().begin();
+		//em.getTransaction().begin();
 		
 		em.persist(trip);
 		
-		em.flush();
-		em.getTransaction().commit();
+		  em.flush();
+		//em.getTransaction().commit();
 		
 		return trip;
 	}
@@ -37,6 +38,12 @@ public class TravelDAOImpl implements TravelDAO {
 	public Travel findById(int id) {
 		
 		return em.find(Travel.class, id);
+	}
+
+	@Override
+	public Travel updateTravel(Travel trip) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

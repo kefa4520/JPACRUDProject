@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.sun.istack.NotNull;
+
 @Entity
 public class Travel {
 
@@ -18,6 +20,7 @@ public class Travel {
 	private String bangForYourBuckStay;
 	
 	@Column(name="trip_name")
+	@NotNull
 	private String tripName;
 	
 	@Column(name="best_time_to_visit")
@@ -169,6 +172,14 @@ public class Travel {
 				+ ", localFoodToTry=" + localFoodToTry + ", mostPopularAttraction=" + mostPopularAttraction
 				+ ", cheapCrashPad=" + cheapCrashPad + ", bangForYourBuckStay=" + bangForYourBuckStay + ", luxuryStay="
 				+ luxuryStay + "]";
+	}
+
+
+
+	public Travel(int id, String tripName) {
+		super();
+		this.id = id;
+		this.tripName = tripName;
 	}
 
 
