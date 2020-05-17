@@ -12,7 +12,7 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="styles.css">
 
-<title>Trip Details</title>
+<title>Updated Trip Details</title>
 <a href="/" button class="text-warning bg-info">Return Home</a><br>
 <a href="delete.do" class="text-warning bg-info">Delete Trip By ID</a><br/>
 
@@ -21,10 +21,12 @@
 <body>
 <div class="container-fluid">
 <div class="shadow-lg p-3 mb-5 bg-white rounded">
-<form action="updateTrip.do" method="POST">
- <c:choose>
 
+ <c:choose>
     <c:when test="${! empty travel.tripName}">
+    <div class="alert alert-success text-center" role="alert">
+			<h3 >Successful Update</h3>
+		</div>
   	<h4>Trip ID: ${travel.id}</h4><br>
 	<h1>Escape to: ${travel.tripName}</h1>
 	
@@ -56,18 +58,16 @@
 	  <input size="50" type="text" name="luxuryStay" value="${travel.luxuryStay}"/><br><br>
   <input type="submit" value="Update Trip Data"/>
   </form>
-  
   </c:when> 
-
+  
   <c:when test="${empty travel.tripName}">
       <div class="alert alert-danger text-center" role="alert">
-			<h3 >Action cannot be completed. Trip Name Required!</h3>
+			<h3 >Update Failed</h3>
 		</div>
     </c:when> 
-
+   
   </c:choose>
   
-   
   	</div>
 	</div>
   

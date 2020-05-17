@@ -17,19 +17,14 @@ public class TravelDAOImpl implements TravelDAO {
 	@PersistenceContext
 	private EntityManager em;
 	
-	//private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("TravelPU");
-	
 
 	@Override
 	public Travel addTravel(Travel trip) {
-		//em = emf.createEntityManager();
-		
-		//em.getTransaction().begin();
 		
 		em.persist(trip);
 		
 		  em.flush();
-		//em.getTransaction().commit();
+		
 		
 		return trip;
 	}
@@ -41,9 +36,30 @@ public class TravelDAOImpl implements TravelDAO {
 	}
 
 	@Override
-	public Travel updateTravel(Travel trip) {
-		// TODO Auto-generated method stub
-		return null;
+	public Travel updateTravel(int id, Travel trip) {
+		
+		Travel updatedTrip = em.find(Travel.class, id);
+		updatedTrip.setTripName(trip.getTripName());
+		updatedTrip.setBestTimeToVisit(trip.getBestTimeToVisit());
+		updatedTrip.setFlightPrice(trip.getFlightPrice());
+		updatedTrip.setVisaRequired(trip.getVisaRequired());
+		updatedTrip.setTripLengthDays(trip.getTripLengthDays());
+		updatedTrip.setLocalFoodToTry(trip.getLocalFoodToTry());
+		updatedTrip.setMostPopularAttraction(trip.getMostPopularAttraction());
+		updatedTrip.setCheapCrashPad(trip.getCheapCrashPad());
+		updatedTrip.setBangForYourBuckStay(trip.getBangForYourBuckStay());
+		updatedTrip.setLuxuryStay(trip.getLuxuryStay());
+		
+		
+		em.flush();
+		return updatedTrip;
+	}
+
+	@Override
+	public void deleteById(int id) {
+		Travel tripToDelete = em.find(Travel.class, id);
+		em.remove(tripToDelete);
+
 	}
 	
 	
