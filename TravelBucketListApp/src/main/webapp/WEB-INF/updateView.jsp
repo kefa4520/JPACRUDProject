@@ -50,14 +50,17 @@
     Most popular attraction:
     <input size="50" type="text" name="mostPopularAttraction" value="${travel.mostPopularAttraction}"/><br><br>
     Places to stay:<br>
+    
      <a href="${travel.cheapCrashPad}">Cheap Crash Pad</a>
-     <input size="50" type="text" name="cheapCrashPad" value="${travel.cheapCrashPad}"/><br><br>
+     <input size="50" type="text" name="cheapCrashPad" placeholder="no link" value="${travel.cheapCrashPad}"/><br><br> 
+     
 	 <a href="${travel.bangForYourBuckStay}">Bang For Your Buck</a>
-	  <input size="50" type="text" name="bangForYourBuckStay" value="${travel.bangForYourBuckStay}"/><br><br>
+	  <input size="50" type="text" name="bangForYourBuckStay" placeholder="no link" value="${travel.bangForYourBuckStay}"/><br><br>
+	  
 	 <a href="${travel.luxuryStay}">Luxury Stay</a> 
-	  <input size="50" type="text" name="luxuryStay" value="${travel.luxuryStay}"/><br><br>
+	  <input size="50" type="text" name="luxuryStay" placeholder="no link" value="${travel.luxuryStay}" placeholder="no link"/><br><br>
   <input type="submit" value="Update Trip Data"/>
-  </form>
+ 
   </c:when> 
   
   <c:when test="${empty travel.tripName}">
