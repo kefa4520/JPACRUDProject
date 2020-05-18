@@ -6,30 +6,43 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-	crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="styles.css">
 
 <title>Updated Trip Details</title>
 <a href="/" button class="text-warning bg-info">Return Home</a><br>
 <a href="delete.do" class="text-warning bg-info">Delete Trip By ID</a><br/>
 
+<style type="text/css">
+.myDiv {
+  border: 5px outset #7f6a04;
+  background-color: #e9daa8;    
+  text-align: left;
+}
+
+a {
+color: #e9daa8;
+}
+
+body {
+    background-color: grey;
+}
+</style>
+
 </head>
 
 <body>
-<div class="container-fluid">
-<div class="shadow-lg p-3 mb-5 bg-white rounded">
+
 
  <c:choose>
     <c:when test="${! empty travel.tripName}">
     <div class="alert alert-success text-center" role="alert">
 			<h3 >Successful Update</h3>
 		</div>
+		<div class="myDiv">
   	<h4>Trip ID: ${travel.id}</h4><br>
+  	<div style="font-family: verdana; padding: 10px; border-radius: 10px; font-size: 12px; text-align: left;">
 	<h1>Escape to: ${travel.tripName}</h1>
-	
+	</div>
+	</div>
 	<input type="hidden" name="id" value="${travel.id}"/>
     Trip Name:
     <input type="text" name="tripName" value="${travel.tripName}"/><br><br>
@@ -71,20 +84,7 @@
    
   </c:choose>
   
-  	</div>
-	</div>
   
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-		crossorigin="anonymous"></script>
   
 </body>
 </html>
